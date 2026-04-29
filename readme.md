@@ -2,6 +2,7 @@
 
 <div align="center">
   <h1>Welcome to Taskify 👋💻</h1>
+  [![codecov](https://codecov.io/github/Pentulum/Taskify/graph/badge.svg?token=ZIT6Q8Z0QS)](https://codecov.io/github/Pentulum/Taskify)
   <h3>Live Website for Taskify : <a href="#">Click Here!</a></h3>
 </div>
 
