@@ -2,7 +2,6 @@
 
 <div align="center">
   <h1>Welcome to Taskify 👋💻</h1>
-  [![codecov](https://codecov.io/github/Pentulum/Taskify/graph/badge.svg?token=ZIT6Q8Z0QS)](https://codecov.io/github/Pentulum/Taskify)
   <h3>Live Website for Taskify : <a href="#">Click Here!</a></h3>
 </div>
 
@@ -14,6 +13,9 @@
 <a href="https://github.com/DSCKGEC/Taskify"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square"></a>
 <a href="https://github.com/DSCKGEC/Taskify/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/sudip-101/Taskify"></a>
 <a href="https://github.com/DSCKGEC/Taskify"><img src="https://img.shields.io/maintenance/yes/2022"></a>
+<a href="https://codecov.io/github/Pentulum/Taskify" > 
+ <img src="https://codecov.io/github/Pentulum/Taskify/graph/badge.svg?token=ZIT6Q8Z0QS"/> 
+ </a>
 </p> 
 
 
