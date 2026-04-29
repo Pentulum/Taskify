@@ -104,7 +104,7 @@ a .nav-title:hover {
 }
 .nav-btn {
   cursor: pointer;
-  color: var(--clr-main-bg);
+  color: var(--clr-light-white);
   font-size: 18px;
   padding: var(--btn-padding);
   border-radius: 4px;
