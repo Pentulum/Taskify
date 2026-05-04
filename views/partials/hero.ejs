@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../static/styles/main.css">
     <link rel="stylesheet" href="../../static/styles/partials/hero.css" />
-  
     <title>Document</title>
   </head>
   <body>
@@ -14,31 +13,18 @@
       <div class="container hero-container">
         <div class="hero-col-text">
           <div>
-            <h1 class="hero-heading">One app to
-              replace them all</h1>
-              
+            <h1 class="hero-heading"><%= t('hero_title') %></h1>
           </div>
           <div class="hero-desc">
-            <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, explicabo. -->
+            <!-- 描述文字也可以在这里添加翻译 -->
           </div>
-          
-          <input class="hero-input-email"type="email" name="email" id="hero-email" placeholder="Enter your email address">
-        
-          <a href="#" class="hero-btn">Get Started</a>
+          <input class="hero-input-email" type="email" name="email" id="hero-email" placeholder="Enter email">
+          <a href="#" class="hero-btn"><%= t('hero_btn') %></a>
         </div>
-        
-      
-          
-          <div class="hero-col-img">
-              <img class="hero-image" src="../../static/assets/laptop.png" alt="">
-          
-          </div>
-
-        
+        <div class="hero-col-img">
+            <img class="hero-image" src="../../static/assets/laptop.png" alt="laptop">
+        </div>
        </div>
-      
-    
       </section>
-    
   </body>
 </html>

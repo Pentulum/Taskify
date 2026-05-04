@@ -1,0 +1,7 @@
+{
+  "nav_home": "首页", "nav_features": "功能", "nav_signup": "注册", "nav_login": "登录",
+  "hero_title": "一个应用替代所有", "hero_btn": "开始使用",
+  "cookie_msg": "我们使用 Cookie 来提升您的体验。", "cookie_accept": "接受",
+  "privacy_policy": "隐私政策", "footer_copy": "© Taskify 责任有限公司",
+  "signup_title": "注册", "login_title": "登录", "username": "用户名"
+}

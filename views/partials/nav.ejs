@@ -18,16 +18,35 @@
 
         <nav>
           <ul class="nav-items">
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Templates</a></li>
-            <li><a href="#">For Teams</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Pricing</a></li>
+            <li><a href="/"><%= t('nav_home') %></a></li>
+            <li><a href="#"><%= t('nav_features') %></a></li>
+            
+           <!-- 语言切换：增加 flex 布局确保横向排列 -->
+<li style="margin-left: 20px; list-style: none; display: flex; align-items: center; gap: 5px;"> 
+  <!-- 英文按钮 -->
+  <a href="?lang=en" 
+     <% if (currentLocale === 'en') { %> 
+        style="font-weight:bold; color:#8000ff; text-decoration:none;" 
+     <% } else { %> 
+        style="color:#333; text-decoration:none;" 
+     <% } %>>EN</a>
+
+  <span style="color:#333;">|</span>
+
+  <!-- 中文按钮 -->
+  <a href="?lang=zh" 
+     <% if (currentLocale === 'zh') { %> 
+        style="font-weight:bold; color:#8000ff; text-decoration:none;" 
+     <% } else { %> 
+        style="color:#333; text-decoration:none;" 
+     <% } %>>中</a>
+</li>
+
           </ul>
         </nav>
         <div class="nav-buttons">
-          <a href="/signup" class="btn1 nav-btn">Sign Up</a>
-          <a href="/dashboard" class="btn2 nav-btn">Log In</a>
+          <a href="/signup" class="btn1 nav-btn"><%= t('nav_signup') %></a>
+          <a href="/dashboard" class="btn2 nav-btn"><%= t('nav_login') %></a>
         </div>
       </div>
     </header>
