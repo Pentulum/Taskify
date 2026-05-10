@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= currentLocale === 'zh' ? 'zh' : 'en' %>">
 
 <head>
   <meta charset="UTF-8" />
@@ -20,7 +20,7 @@
             <button type="submit">
               <i class="fas fa-search"></i>
             </button>
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="<%= t('dashboard_search') %>" />
           </form>
         <div class="dashboard-navbar-dashboard-links">
           <ul class="dashboard-navbar-dashboard-navbar-links">
@@ -35,8 +35,8 @@
                 <button onclick="myFunction()" class="dashboard-navbar-dropbtn">Lord Voldemort <i class="fa-solid fa-chevron-down"></i></button>
                 
                 <div id="dashboard-navbar-myDropdown" class="dashboard-navbar-dropdown-content">
-                  <a href="#" style="font-size: 16px;">Profile</a>
-                  <a href="#" style="font-size: 16px;">Log Out</a>
+                  <a href="#" style="font-size: 16px;"><%= t('dashboard_profile') %></a>
+                  <a href="#" style="font-size: 16px;"><%= t('dashboard_logout') %></a>
                 </div>
               </div>
             </li>

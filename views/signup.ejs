@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= currentLocale === 'zh' ? 'zh' : 'en' %>">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../static/styles/signup.css" />
-  <title>SignUp</title>
+  <title><%= t('signup_title') %></title>
 </head>
 <body>
   <section class="section signup-section">
@@ -20,10 +20,10 @@
               <input type="text" name="SignUpUsername" placeholder="<%= t('username') %>" required="true" />
             </div>
             <div class="signup-email">
-              <input type="email" name="SignUpEmail" placeholder="Email" required="true" />
+              <input type="email" name="SignUpEmail" placeholder="<%= t('email') %>" required="true" />
             </div>
             <div class="signup-password">
-              <input type="password" name="SignUpPassword" placeholder="Password" required="true" />
+              <input type="password" name="SignUpPassword" placeholder="<%= t('password') %>" required="true" />
             </div>
             <div>
               <input class="button" name="SignUpSubmit" type="submit" value="<%= t('nav_signup') %>" />
@@ -34,10 +34,10 @@
           <form method="post" action="/login">
             <label for="chk" aria-hidden="true"><%= t('login_title') %></label>
             <div class="signup-email">
-              <input type="email" name="LoginEmail" placeholder="Email" required="true" />
+              <input type="email" name="LoginEmail" placeholder="<%= t('email') %>" required="true" />
             </div>
             <div class="signup-password">
-              <input type="password" name="LoginPassword" placeholder="Password" required="true" />
+              <input type="password" name="LoginPassword" placeholder="<%= t('password') %>" required="true" />
             </div>
             <div>
               <input class="button" name="LoginSubmit" type="submit" value="<%= t('nav_login') %>" />

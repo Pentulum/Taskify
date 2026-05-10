@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= currentLocale === 'zh' ? 'zh' : 'en' %>">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,7 +18,7 @@
           <div class="hero-desc">
             <!-- 描述文字也可以在这里添加翻译 -->
           </div>
-          <input class="hero-input-email" type="email" name="email" id="hero-email" placeholder="Enter email">
+          <input class="hero-input-email" type="email" name="email" id="hero-email" placeholder="<%= t('hero_email_placeholder') %>">
           <a href="#" class="hero-btn"><%= t('hero_btn') %></a>
         </div>
         <div class="hero-col-img">
