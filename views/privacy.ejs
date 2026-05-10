@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= t('privacy_policy') %></title>
     <link rel="stylesheet" href="../static/styles/main.css">
 </head>
 <body>
    <%- include("partials/nav.ejs") %>
 
-<div class="container" style="padding: 100px 20px; line-height: 1.8; color: #333;">
+<div class="container privacy-content">
     <h1>Privacy Policy | 隐私政策</h1>
-    <p style="color: #666; margin-bottom: 30px;">Last Updated: April 2026</p>
+    <p class="privacy-date">Last Updated: April 2026</p>
 
     <!-- Section 1: Introduction -->
-    <section style="margin-bottom: 40px;">
+    <section>
         <h2>1. Introduction / 简介</h2>
         <p>Welcome to Taskify. We are committed to protecting your personal information and your right to privacy. This policy explains what information we collect and how we use it.</p>
         <p>欢迎使用 Taskify。我们致力于保护您的个人信息和隐私权。本政策解释了我们收集哪些信息以及如何使用这些信息。</p>
     </section>
 
     <!-- Section 2: Data Collection -->
-    <section style="margin-bottom: 40px;">
+    <section>
         <h2>2. Information We Collect / 我们收集的信息</h2>
         <p>In this project, we collect the following data:</p>
         <ul>
@@ -37,27 +38,27 @@
     </section>
 
     <!-- Section 3: Use of Data -->
-    <section style="margin-bottom: 40px;">
+    <section>
         <h2>3. How We Use Your Information / 我们如何使用信息</h2>
         <p>Your data is used solely to provide task management services, including user authentication and personalized task lists. We do not sell your data to third parties.</p>
         <p>您的数据仅用于提供任务管理服务，包括用户身份验证和个性化任务列表。我们不会向第三方出售您的数据。</p>
     </section>
 
     <!-- Section 4: Security -->
-    <section style="margin-bottom: 40px;">
+    <section>
         <h2>4. Data Security / 数据安全</h2>
         <p>We implement technical measures to protect your data, including encrypted database storage (MongoDB Atlas) and secure session management.</p>
         <p>我们实施技术措施保护您的数据，包括加密的数据库存储（MongoDB Atlas）和安全的会话管理。</p>
     </section>
 
     <!-- Section 5: Academic Disclaimer (非常重要，对大作业加分) -->
-    <section style="margin-bottom: 40px; border: 1px solid #ccc; padding: 20px; background: #f9f9f9;">
+    <section class="privacy-disclaimer">
         <h2>5. Academic Disclaimer / 学术免责声明</h2>
         <p>This application is developed for <strong>CPT304 Software Engineering 2</strong> coursework purposes at XJTLU. It is not a commercial product. Please do not upload sensitive real-world personal data.</p>
         <p>本应用程序是为西交利物浦大学 <strong>CPT304 软件工程 2</strong> 课程作业开发的。它不是商业产品。请勿上传敏感的真实个人数据。</p>
     </section>
 
-    <a href="/" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#8000ff; color:#fff; text-decoration:none; border-radius:5px;">Back to Home / 返回首页</a>
+    <a href="/" class="btn-back">Back to Home / 返回首页</a>
 </div>
 
 <%- include("partials/footer.ejs") %>

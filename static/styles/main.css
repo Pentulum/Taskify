@@ -106,3 +106,35 @@ body {
   max-width: 1200px;
   padding: var(--gen-padding);
 }
+
+/* Privacy page */
+.privacy-content {
+  padding: 100px 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.privacy-content section {
+  margin-bottom: 40px;
+}
+
+.privacy-date {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.privacy-disclaimer {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #8000ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
