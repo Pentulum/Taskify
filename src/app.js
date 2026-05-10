@@ -72,6 +72,10 @@ app.get("/dashboard", (req, res) => {
     res.status(200).render("dashboard/dashboard.ejs");
 });
 
+app.use((req, res) => {
+    res.status(404).send('404 Not Found');
+});
+
 //* listen
 if (require.main === module) {
     app.listen(port, () => {
