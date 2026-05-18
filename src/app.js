@@ -1,6 +1,7 @@
 const { urlencoded } = require("express");
 const express = require("express");
 const helmet = require('helmet');
+const session = require("express-session");
 const path = require("path");
 const i18n = require("i18n"); // 新增：引入 i18n
 const cookieParser = require("cookie-parser"); // 新增：引入 cookie-parser
@@ -66,6 +67,21 @@ app.use("/static", express.static(static_path));
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
 
+app.use(
+  session({
+    name: "taskify.sid",
+    secret: process.env.SESSION_SECRET || "dev-only-session-secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 1000 * 60 * 60
+    }
+  })
+);
+
 // 必须在路由之前使用这两个中间件
 app.use(cookieParser()); // 解析 cookie
 app.use(i18n.init);      // 初始化 i18n
@@ -79,12 +95,44 @@ app.use((req, res, next) => {
 app.set("view engine", "ejs");
 app.set("views", views_path);
 
+function requireAuth(req, res, next) {
+  if (!req.session.user) {
+    return res.redirect("/signup");
+  }
+  next();
+}
+
 app.get("/", (req, res) => {
     res.status(200).render("index.ejs");
 });
 
 app.get("/signup", (req, res) => {
-    res.status(200).render("signup.ejs");
+  if (req.session.user) {
+    return res.redirect("/dashboard");
+  }
+
+  res.status(200).render("signup.ejs");
+});
+
+app.post("/signup", (req, res) => {
+  req.session.user = {
+    email: req.body.SignUpEmail,
+    username: req.body.SignUpUsername
+  };
+  res.redirect("/dashboard");
+});
+
+app.post("/login", (req, res) => {
+  req.session.user = {
+    email: req.body.LoginEmail
+  };
+  res.redirect("/dashboard");
+});
+
+app.post("/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/signup");
+  });
 });
 
 app.get("/privacy", (req, res) => {
@@ -92,7 +140,7 @@ app.get("/privacy", (req, res) => {
 });
 
 // In Future this dashboard will be rendered after authentication of users 
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard", requireAuth, (req, res) => {
     res.status(200).render("dashboard/dashboard.ejs");
 });
 
