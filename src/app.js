@@ -13,6 +13,8 @@ const static_path = path.join(__dirname, "../static");
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.disable("x-powered-by");
+
 // --- i18n 国际化配置开始 ---
 i18n.configure({
     locales: ['en', 'zh'],  // 支持英文和中文
@@ -31,13 +33,35 @@ i18n.configure({
 app.use(
   helmet({
     contentSecurityPolicy: {
+      useDefaults: true,
       directives: {
-        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        "script-src": ["'self'", "'unsafe-inline'"], // 允许运行 HTML 里的脚本
-      },
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'"],
+        styleSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "https://fonts.googleapis.com",
+          "https://cdnjs.cloudflare.com"
+        ],
+        fontSrc: [
+          "'self'",
+          "https://fonts.gstatic.com",
+          "https://cdnjs.cloudflare.com"
+        ],
+        imgSrc: ["'self'", "data:"],
+        objectSrc: ["'none'"],
+        baseUri: ["'self'"],
+        frameAncestors: ["'self'"],
+        formAction: ["'self'"],
+        upgradeInsecureRequests: null
+      }
     },
+    referrerPolicy: {
+      policy: "no-referrer"
+    }
   })
 );
+
 app.use("/static", express.static(static_path));
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
